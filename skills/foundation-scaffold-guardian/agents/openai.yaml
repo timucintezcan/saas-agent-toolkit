@@ -1,0 +1,4 @@
+interface:
+  display_name: "Foundation Scaffold Guardian"
+  short_description: "Protect reusable SaaS foundation architecture."
+  default_prompt: "Review this foundation change for structural drift, portability, and generator safety."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Release Readiness Checker"
+  short_description: "Produce evidence-based SaaS release decisions."
+  default_prompt: "Assess this release and return GO, GO WITH KNOWN RISKS, or NO-GO with verification evidence."

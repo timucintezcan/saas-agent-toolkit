@@ -1,0 +1,18 @@
+{
+  "name": "saas-agent-toolkit",
+  "version": "0.1.0",
+  "description": "Reusable agent roles, skills, workflows, and safety policies for building and operating SaaS products.",
+  "author": {
+    "name": "Timucin Tezcan"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "SaaS Agent Toolkit",
+    "shortDescription": "Build and operate SaaS products with reusable engineering workflows.",
+    "longDescription": "SaaS Agent Toolkit provides product-agnostic roles, skills, release workflows, and production safety policies for SaaS engineering.",
+    "developerName": "Timucin Tezcan",
+    "category": "Developer Tools",
+    "capabilities": ["skills"],
+    "defaultPrompt": "Help me plan, build, validate, or release this SaaS project using the appropriate toolkit skill."
+  }
+}

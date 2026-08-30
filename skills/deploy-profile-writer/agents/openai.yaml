@@ -1,0 +1,4 @@
+interface:
+  display_name: "Deploy Profile Writer"
+  short_description: "Design a managed SaaS deployment and release profile."
+  default_prompt: "Design a minimal deployment profile for this SaaS repository, including release order, verification, and rollback."

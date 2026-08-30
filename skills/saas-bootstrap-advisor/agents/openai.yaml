@@ -1,0 +1,4 @@
+interface:
+  display_name: "SaaS Bootstrap Advisor"
+  short_description: "Choose a minimal, supported SaaS project profile."
+  default_prompt: "Recommend the smallest supported SaaS foundation profile for this product and explain the deferred capabilities."
