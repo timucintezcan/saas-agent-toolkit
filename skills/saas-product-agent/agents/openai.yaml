@@ -1,0 +1,4 @@
+interface:
+  display_name: "SaaS Product Agent"
+  short_description: "Own PRDs, MVP scope, and product acceptance."
+  default_prompt: "Turn this SaaS objective into a focused product contract with journeys, scope, metrics, and acceptance criteria."

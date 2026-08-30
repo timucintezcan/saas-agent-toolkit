@@ -1,0 +1,4 @@
+interface:
+  display_name: "SaaS Data Agent"
+  short_description: "Protect SaaS data integrity and migration safety."
+  default_prompt: "Review or implement this data change with explicit integrity, authorization, migration, and recovery guarantees."

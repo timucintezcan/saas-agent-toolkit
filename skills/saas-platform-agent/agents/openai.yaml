@@ -1,0 +1,4 @@
+interface:
+  display_name: "SaaS Platform Agent"
+  short_description: "Operate SaaS environments and safe releases."
+  default_prompt: "Prepare and verify this SaaS platform or release change, stopping at the required production approval gate."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "SaaS Quality Agent"
+  short_description: "Assess SaaS quality, security, and release risk."
+  default_prompt: "Independently assess this SaaS change and return an evidence-based release decision."

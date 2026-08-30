@@ -26,6 +26,7 @@ This repository is in its initial `0.1.x` development phase. Codex is the refere
 core/roles/          Vendor-neutral agent responsibilities
 core/workflows/      Shared delivery contracts
 core/policies/       Safety, portability, and approval rules
+agents/              Executable specialist profile contracts
 skills/              Discoverable Codex skills
 docs/                Architecture and contributor documentation
 ```
@@ -36,6 +37,19 @@ docs/                Architecture and contributor documentation
 - `saas-bootstrap-advisor`
 - `release-readiness-checker`
 - `deploy-profile-writer`
+
+## Specialist Agents
+
+- Delivery Orchestrator
+- Product and PRD Agent
+- Architecture Agent
+- Application Engineering Agent
+- Data and Database Agent
+- Platform and Release Agent
+- Quality and Security Agent
+- Observability and Cost Agent
+
+Each profile has a corresponding Codex role skill. These adapters let the current Codex agent adopt a specialist outcome contract and select narrower workflow or provider skills. See [`docs/agent-model.md`](docs/agent-model.md).
 
 Provider implementation skills for Supabase, Vercel, Railway, OpenAI, Cloudflare, Stripe, Resend, and Sentry will be added incrementally after the core contracts are validated.
 

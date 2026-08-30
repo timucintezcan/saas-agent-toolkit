@@ -1,0 +1,4 @@
+interface:
+  display_name: "SaaS Architecture Agent"
+  short_description: "Design simple, evolvable SaaS architecture."
+  default_prompt: "Design the simplest evolvable architecture for this SaaS objective and explain the boundaries and trade-offs."

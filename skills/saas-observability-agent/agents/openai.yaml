@@ -1,0 +1,4 @@
+interface:
+  display_name: "SaaS Observability Agent"
+  short_description: "Make SaaS health and cost signals actionable."
+  default_prompt: "Review this SaaS workload and define the minimum actionable observability and cost controls."

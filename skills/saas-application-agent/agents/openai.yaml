@@ -1,0 +1,4 @@
+interface:
+  display_name: "SaaS Application Agent"
+  short_description: "Implement reliable SaaS application behavior."
+  default_prompt: "Implement this SaaS behavior within the existing architecture and verify the critical success and failure paths."

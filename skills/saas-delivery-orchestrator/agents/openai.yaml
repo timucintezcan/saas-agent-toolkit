@@ -1,0 +1,4 @@
+interface:
+  display_name: "SaaS Delivery Orchestrator"
+  short_description: "Coordinate multi-specialist SaaS delivery."
+  default_prompt: "Coordinate this SaaS objective across the necessary specialist profiles and return one verified delivery outcome."

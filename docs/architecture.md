@@ -14,6 +14,10 @@ SaaS Agent Toolkit separates durable engineering knowledge from coding-agent-spe
 
 `skills/` contains bounded Codex skills. A skill may apply a core workflow, add provider-specific guidance, and use deterministic scripts. Skills should remain independently discoverable and avoid loading unrelated references.
 
+### Agent Profiles
+
+`agents/` contains vendor-neutral outcome ownership, activation boundaries, delegation rules, and output contracts. Codex role skills expose these profiles without duplicating their full contracts.
+
 ### Future Adapters
 
 Codex is the reference implementation in `0.1.x`. A Claude Code adapter will consume the same core contracts after those contracts have been validated. Adapter-specific files must not become a second source of business rules.
