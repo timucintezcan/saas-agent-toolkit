@@ -87,6 +87,17 @@ Read [`core/policies/approval-gates.md`](core/policies/approval-gates.md) for th
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md). Skills must remain product-agnostic, include clear activation boundaries, and define verification and stopping conditions.
 
+## Validation
+
+Run the portable repository validator and its tests:
+
+```bash
+python3 scripts/validate_repository.py
+python3 -m unittest discover -s tests -p "test_*.py"
+```
+
+CI runs the same checks for pushes and pull requests. Maintainers should also run the canonical Codex skill and plugin validators before publishing a release.
+
 ## License
 
 MIT
