@@ -1,149 +1,154 @@
 # SaaS Agent Toolkit
 
-Reusable agent roles, skills, workflows, and safety policies for building and operating SaaS products.
+[![Validate toolkit](https://github.com/timucintezcan/saas-agent-toolkit/actions/workflows/validate.yml/badge.svg)](https://github.com/timucintezcan/saas-agent-toolkit/actions/workflows/validate.yml)
+[![GitHub release](https://img.shields.io/github/v/release/timucintezcan/saas-agent-toolkit)](https://github.com/timucintezcan/saas-agent-toolkit/releases/latest)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-The toolkit is product-agnostic and repository-aware. It can support projects generated from [SaaS Foundation](https://github.com/timucintezcan/saas-foundation) as well as existing SaaS codebases with different structures.
+Reusable agent profiles, Codex skills, delivery workflows, and production safety policies for building and operating SaaS products.
 
-## Project Status
+The toolkit is product-agnostic and repository-aware. It works with projects generated from [SaaS Foundation](https://github.com/timucintezcan/saas-foundation) and with existing repositories that use different frameworks or providers.
 
-This repository is in its initial `0.1.x` development phase. Codex is the reference adapter. A Claude Code adapter will be added after the shared workflows have been validated against real projects.
+## Why This Exists
 
-## Design Principles
+Coding agents are useful, but repeatable SaaS delivery needs more than prompts. It needs explicit ownership, bounded procedures, evidence-based validation, and human approval at production boundaries.
 
-- Keep shared engineering knowledge vendor-neutral.
-- Treat agents as owners of outcomes and skills as bounded reusable procedures.
-- Discover the target repository before prescribing changes.
-- Never require SaaS Foundation to use the toolkit.
-- Keep provider-specific behavior behind focused skills.
-- Require explicit human approval for production mutations.
-- Never expose, print, or commit secret values.
-- Validate observable outcomes instead of generated wording.
+SaaS Agent Toolkit provides those reusable contracts:
 
-## Repository Structure
+- **Agent profiles** own outcomes such as product definition, architecture, data, release, and quality.
+- **Skills** execute focused procedures such as Supabase integration, Vercel deployment, or release assessment.
+- **Core workflows and policies** keep safety, portability, and approval rules consistent.
+- **Validation tooling** checks repository structure, skill metadata, marketplace packaging, and documentation links.
 
-```text
-.codex-plugin/       Codex plugin manifest
-core/roles/          Vendor-neutral agent responsibilities
-core/workflows/      Shared delivery contracts
-core/policies/       Safety, portability, and approval rules
-agents/              Executable specialist profile contracts
-skills/              Discoverable Codex skills
-docs/                Architecture and contributor documentation
-```
+## What It Is — and Is Not
 
-## Initial Skills
+| It is | It is not |
+| --- | --- |
+| A reusable engineering control plane for SaaS work | A generated SaaS application |
+| A coordinated role-and-skill model | A claim of independent parallel agents |
+| Repository-aware and provider-conscious | Coupled to one framework or cloud |
+| Preview-first and evidence-driven | Permission to mutate production automatically |
+| Compatible with SaaS Foundation | Dependent on SaaS Foundation |
 
-- `foundation-scaffold-guardian`
-- `saas-bootstrap-advisor`
-- `release-readiness-checker`
-- `deploy-profile-writer`
+## Quick Start
 
-## Specialist Agents
-
-- Delivery Orchestrator
-- Product and PRD Agent
-- Architecture Agent
-- Application Engineering Agent
-- Data and Database Agent
-- Platform and Release Agent
-- Quality and Security Agent
-- Observability and Cost Agent
-
-Each profile has a corresponding Codex role skill. These adapters let the current Codex agent adopt a specialist outcome contract and select narrower workflow or provider skills. See [`docs/agent-model.md`](docs/agent-model.md).
-
-Initial provider and configuration skills:
-
-- `environment-contract-manager`
-- `supabase-project-setup`
-- `vercel-deployment`
-- `railway-deployment`
-- `openai-integration`
-
-Cloudflare, Stripe, Resend, and Sentry skills will be added incrementally after the initial pack is validated against real projects. See [`docs/provider-skills.md`](docs/provider-skills.md).
-
-## Relationship to SaaS Foundation
-
-```text
-SaaS Foundation      creates application code
-SaaS Agent Toolkit   plans, reviews, integrates, validates, and releases it
-```
-
-The repositories have independent release cycles. Generated applications must remain buildable, testable, and deployable without an installed AI agent.
-
-## Install in Codex
-
-The recommended installation unit is the complete plugin. Do not install the skill directories individually: role skills reference shared contracts in `agents/` and `core/`.
-
-### Public releases
-
-Install a tagged release directly from GitHub:
+Install the latest tagged release into Codex:
 
 ```bash
 codex plugin marketplace add timucintezcan/saas-agent-toolkit --ref v0.1.0
 codex plugin add saas-agent-toolkit@saas-agent-toolkit
 ```
 
-### Local development
-
-Clone the repository, then run:
-
-```bash
-codex plugin marketplace add /absolute/path/to/saas-agent-toolkit
-codex plugin add saas-agent-toolkit@saas-agent-toolkit
-```
-
-Start a new Codex task after installation so the newly installed skills are loaded.
-
-Verify the installation with:
+Start a new Codex task so the installed skills are loaded, then verify the plugin:
 
 ```bash
 codex plugin list
 ```
 
-The expected result is an enabled `saas-agent-toolkit` plugin containing eight specialist agent profiles and seventeen skills in version `0.1.0`.
+Try an outcome-oriented request:
 
-## Using the Toolkit
+> Assess this repository for release readiness. Do not mutate production resources.
 
-Ask Codex for an outcome rather than selecting every skill manually. Examples:
+See the [Getting Started guide](docs/getting-started.md) for local development, upgrades, and removal.
 
-- "Assess this repository for release readiness."
-- "Prepare a preview-first Vercel deployment plan."
-- "Review this Supabase schema and RLS model."
-- "Define the environment contract without exposing secret values."
-- "Coordinate the implementation of this multi-phase SaaS feature."
+## How It Works
 
-Codex should select the narrowest applicable skill or adopt the Delivery Orchestrator for cross-cutting work. Production mutations still require explicit approval.
+```text
+User objective
+      ↓
+Delivery Orchestrator or narrow specialist
+      ↓
+Agent outcome contract
+      ↓
+Focused workflow or provider skill
+      ↓
+Tools, repository changes, and verification evidence
+      ↓
+Human approval before production mutation
+```
+
+Codex selects the narrowest suitable skill. Cross-cutting objectives use the Delivery Orchestrator, which coordinates specialist responsibilities and approval gates without pretending that every profile runs as an independent process.
+
+Read [Agent Model](docs/agent-model.md) for the execution and routing contract.
+
+## Specialist Agents
+
+| Agent | Primary ownership |
+| --- | --- |
+| Delivery Orchestrator | Cross-cutting plans, dependencies, routing, and integrated evidence |
+| Product and PRD | Product intent, MVP scope, journeys, acceptance criteria, and decision records |
+| Architecture | System, repository, service, API, data, and deployment boundaries |
+| Application Engineering | Frontend, backend, API, authentication, and integration implementation |
+| Data and Database | Schemas, migrations, authorization, concurrency, retention, and query performance |
+| Platform and Release | Environments, CI/CD, managed infrastructure, deployments, domains, and rollback |
+| Quality and Security | Test strategy, security, privacy, resilience, and independent release decisions |
+| Observability and Cost | Logs, metrics, alerts, performance, incidents, and provider cost signals |
+
+## Skill Coverage
+
+The `0.1.x` line contains 17 skills across four groups:
+
+- **Role adapters:** delivery, product, architecture, application, data, platform, quality, and observability.
+- **Provider integrations:** Supabase, Vercel, Railway, and OpenAI.
+- **Environment and release:** environment contracts, deployment profiles, and release readiness.
+- **Foundation workflows:** SaaS bootstrap decisions and scaffold protection.
+
+See the [Skill Catalog](docs/skill-catalog.md) for activation guidance for every skill.
 
 ## Safety Model
 
-The toolkit may prepare and validate production changes, but it must request explicit approval immediately before:
+Repository discovery and read-only inspection can proceed without mutation approval. Explicit human approval is required immediately before:
 
 - production deployment;
-- production database migration or backfill;
+- production migration or backfill;
 - DNS, domain, or OAuth callback mutation;
 - secret creation, rotation, or revocation;
 - destructive data operations;
-- billing or paid-provider changes.
+- billing or paid-resource changes.
 
-Read [`core/policies/approval-gates.md`](core/policies/approval-gates.md) for the full contract.
+The toolkit never treats an earlier planning approval as authorization for a later production mutation. See [Approval Gates](core/policies/approval-gates.md) and [Secret Management](core/policies/secret-management.md).
 
-## Contributing
+## Repository Map
 
-See [`CONTRIBUTING.md`](CONTRIBUTING.md). Skills must remain product-agnostic, include clear activation boundaries, and define verification and stopping conditions.
+```text
+.agents/plugins/      Git and local Codex marketplace entry
+.codex-plugin/        Codex plugin manifest
+agents/               Vendor-neutral specialist outcome contracts
+core/roles/           Durable engineering responsibilities
+core/workflows/       Shared task, provider, agent, and release workflows
+core/policies/        Approval, secret, and portability rules
+skills/               Discoverable Codex role and procedure adapters
+scripts/              Deterministic repository validators
+tests/                Validator behavior tests
+docs/                 Architecture, usage, catalog, and release guides
+```
+
+Read [Architecture](docs/architecture.md) for dependency direction and extension boundaries.
+
+## Documentation
+
+- [Getting Started](docs/getting-started.md)
+- [Skill Catalog](docs/skill-catalog.md)
+- [Usage Patterns](docs/usage-patterns.md)
+- [Agent Model](docs/agent-model.md)
+- [Architecture](docs/architecture.md)
+- [Provider Skills](docs/provider-skills.md)
+- [Release Process](docs/releasing.md)
+- [Contributing](CONTRIBUTING.md)
+- [Security Policy](SECURITY.md)
+
+## Project Status
+
+Codex is the reference adapter for `0.1.x`. Claude Code support is intentionally deferred until the shared contracts and real-project evaluations are stable. Planned provider skills include Cloudflare, Stripe, Resend, and Sentry.
 
 ## Validation
-
-Run the portable repository validator and its tests:
 
 ```bash
 python3 scripts/validate_repository.py
 python3 -m unittest discover -s tests -p "test_*.py"
 ```
 
-CI runs the same checks for pushes and pull requests. Maintainers should also run the canonical Codex skill and plugin validators before publishing a release.
-
-See [`docs/releasing.md`](docs/releasing.md) for the release checklist.
+CI runs the same checks for pushes and pull requests. Releases additionally require canonical Codex skill and plugin validation plus clean marketplace installation evidence.
 
 ## License
 
-MIT
+[MIT](LICENSE)

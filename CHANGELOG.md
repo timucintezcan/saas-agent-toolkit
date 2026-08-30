@@ -11,6 +11,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Local Codex installation and discovery verification against a real SaaS repository.
 - Git and local-path Codex marketplace packaging.
 - Installation, usage, and release documentation.
+- Complete skill catalog, usage patterns, and upgrade guidance.
+
+### Changed
+
+- Reworked the README as a public agent-toolkit entry point with explicit scope, routing, safety, architecture, and documentation navigation.
+- Expanded agent-model, architecture, and contribution contracts for maintainers and adapter authors.
 
 ## [0.1.0] - 2026-08-30
 
