@@ -53,6 +53,45 @@ def validate_plugin(root: Path, errors: list[str]) -> None:
         errors.append("Plugin skills path must be ./skills/")
 
 
+def validate_marketplace(root: Path, errors: list[str]) -> None:
+    marketplace_path = root / ".agents" / "plugins" / "marketplace.json"
+    if not marketplace_path.is_file():
+        errors.append("Missing .agents/plugins/marketplace.json")
+        return
+
+    try:
+        marketplace = json.loads(marketplace_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as error:
+        errors.append(f"Invalid marketplace JSON: {error}")
+        return
+
+    if marketplace.get("name") != "saas-agent-toolkit":
+        errors.append("Marketplace name must be saas-agent-toolkit")
+
+    plugins = marketplace.get("plugins")
+    if not isinstance(plugins, list):
+        errors.append("Marketplace plugins must be an array")
+        return
+
+    plugin = next(
+        (entry for entry in plugins if entry.get("name") == "saas-agent-toolkit"),
+        None,
+    )
+    if plugin is None:
+        errors.append("Marketplace must expose saas-agent-toolkit")
+        return
+
+    if plugin.get("source") != {"source": "local", "path": "."}:
+        errors.append("Marketplace plugin source must point to the repository root")
+    if plugin.get("policy") != {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL",
+    }:
+        errors.append("Marketplace plugin policy must use the safe public defaults")
+    if plugin.get("category") != "Developer Tools":
+        errors.append("Marketplace plugin category must be Developer Tools")
+
+
 def validate_skills(root: Path, errors: list[str]) -> None:
     skills_root = root / "skills"
     if not skills_root.is_dir():
@@ -118,6 +157,7 @@ def validate_markdown_links(root: Path, errors: list[str]) -> None:
 def validate_repository(root: Path) -> list[str]:
     errors: list[str] = []
     validate_plugin(root, errors)
+    validate_marketplace(root, errors)
     validate_skills(root, errors)
     validate_markdown_links(root, errors)
     return errors

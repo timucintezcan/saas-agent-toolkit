@@ -50,6 +50,46 @@ class RepositoryValidatorTest(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "unterminated YAML frontmatter"):
                 parse_frontmatter(skill_file)
 
+    def test_rejects_marketplace_with_external_plugin_path(self) -> None:
+        root = Path(__file__).resolve().parents[1]
+        with tempfile.TemporaryDirectory() as directory:
+            copy_root = Path(directory)
+            marketplace_path = copy_root / ".agents" / "plugins" / "marketplace.json"
+            marketplace_path.parent.mkdir(parents=True)
+            marketplace_path.write_text(
+                json.dumps(
+                    {
+                        "name": "saas-agent-toolkit",
+                        "plugins": [
+                            {
+                                "name": "saas-agent-toolkit",
+                                "source": {
+                                    "source": "local",
+                                    "path": "../outside",
+                                },
+                                "policy": {
+                                    "installation": "AVAILABLE",
+                                    "authentication": "ON_INSTALL",
+                                },
+                                "category": "Developer Tools",
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            (copy_root / ".codex-plugin").mkdir()
+            (copy_root / ".codex-plugin" / "plugin.json").write_text(
+                (root / ".codex-plugin" / "plugin.json").read_text(encoding="utf-8"),
+                encoding="utf-8",
+            )
+            (copy_root / "skills").mkdir()
+
+            self.assertIn(
+                "Marketplace plugin source must point to the repository root",
+                validate_repository(copy_root),
+            )
+
 
 if __name__ == "__main__":
     unittest.main()

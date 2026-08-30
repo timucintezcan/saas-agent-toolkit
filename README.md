@@ -70,6 +70,50 @@ SaaS Agent Toolkit   plans, reviews, integrates, validates, and releases it
 
 The repositories have independent release cycles. Generated applications must remain buildable, testable, and deployable without an installed AI agent.
 
+## Install in Codex
+
+The recommended installation unit is the complete plugin. Do not install the skill directories individually: role skills reference shared contracts in `agents/` and `core/`.
+
+### Public releases
+
+Install a tagged release directly from GitHub:
+
+```bash
+codex plugin marketplace add timucintezcan/saas-agent-toolkit --ref v0.1.0
+codex plugin add saas-agent-toolkit@saas-agent-toolkit
+```
+
+### Local development
+
+Clone the repository, then run:
+
+```bash
+codex plugin marketplace add /absolute/path/to/saas-agent-toolkit
+codex plugin add saas-agent-toolkit@saas-agent-toolkit
+```
+
+Start a new Codex task after installation so the newly installed skills are loaded.
+
+Verify the installation with:
+
+```bash
+codex plugin list
+```
+
+The expected result is an enabled `saas-agent-toolkit` plugin containing eight specialist agent profiles and seventeen skills in version `0.1.0`.
+
+## Using the Toolkit
+
+Ask Codex for an outcome rather than selecting every skill manually. Examples:
+
+- "Assess this repository for release readiness."
+- "Prepare a preview-first Vercel deployment plan."
+- "Review this Supabase schema and RLS model."
+- "Define the environment contract without exposing secret values."
+- "Coordinate the implementation of this multi-phase SaaS feature."
+
+Codex should select the narrowest applicable skill or adopt the Delivery Orchestrator for cross-cutting work. Production mutations still require explicit approval.
+
 ## Safety Model
 
 The toolkit may prepare and validate production changes, but it must request explicit approval immediately before:
@@ -97,6 +141,8 @@ python3 -m unittest discover -s tests -p "test_*.py"
 ```
 
 CI runs the same checks for pushes and pull requests. Maintainers should also run the canonical Codex skill and plugin validators before publishing a release.
+
+See [`docs/releasing.md`](docs/releasing.md) for the release checklist.
 
 ## License
 
