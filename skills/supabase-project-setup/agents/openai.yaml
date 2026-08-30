@@ -1,0 +1,4 @@
+interface:
+  display_name: "Supabase Project Setup"
+  short_description: "Build migration-driven, RLS-safe Supabase integrations."
+  default_prompt: "Integrate or review Supabase for this SaaS repository with explicit migrations, RLS, environment scope, validation, and release gates."

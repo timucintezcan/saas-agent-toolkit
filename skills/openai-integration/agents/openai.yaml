@@ -1,0 +1,4 @@
+interface:
+  display_name: "OpenAI Integration"
+  short_description: "Build reliable, bounded OpenAI SaaS features."
+  default_prompt: "Design or implement this OpenAI feature with structured contracts, evaluations, cost controls, failure handling, and a human fallback."

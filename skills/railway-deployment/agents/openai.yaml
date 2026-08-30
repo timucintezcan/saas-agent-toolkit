@@ -1,0 +1,4 @@
+interface:
+  display_name: "Railway Deployment"
+  short_description: "Deploy SaaS APIs and workers to Railway safely."
+  default_prompt: "Prepare and verify this Railway deployment with explicit services, health checks, migration order, environment scope, and rollback."

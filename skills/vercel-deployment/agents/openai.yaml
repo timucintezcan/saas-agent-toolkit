@@ -1,0 +1,4 @@
+interface:
+  display_name: "Vercel Deployment"
+  short_description: "Deploy SaaS web workloads to Vercel safely."
+  default_prompt: "Prepare and verify a preview-first Vercel deployment for this repository, stopping at the production approval gate."

@@ -51,7 +51,15 @@ docs/                Architecture and contributor documentation
 
 Each profile has a corresponding Codex role skill. These adapters let the current Codex agent adopt a specialist outcome contract and select narrower workflow or provider skills. See [`docs/agent-model.md`](docs/agent-model.md).
 
-Provider implementation skills for Supabase, Vercel, Railway, OpenAI, Cloudflare, Stripe, Resend, and Sentry will be added incrementally after the core contracts are validated.
+Initial provider and configuration skills:
+
+- `environment-contract-manager`
+- `supabase-project-setup`
+- `vercel-deployment`
+- `railway-deployment`
+- `openai-integration`
+
+Cloudflare, Stripe, Resend, and Sentry skills will be added incrementally after the initial pack is validated against real projects. See [`docs/provider-skills.md`](docs/provider-skills.md).
 
 ## Relationship to SaaS Foundation
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Environment Contract Manager"
+  short_description: "Manage safe, explicit SaaS environment contracts."
+  default_prompt: "Audit this repository's environment contract without exposing secret values, then identify missing validation or unsafe scope."
