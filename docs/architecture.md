@@ -9,6 +9,8 @@ SaaS Agent Toolkit separates durable engineering knowledge from agent-platform p
 ```text
 .agents/plugins/marketplace.json   Codex marketplace entry
 .codex-plugin/plugin.json          Codex plugin manifest
+.claude-plugin/plugin.json         Claude Code plugin manifest
+adapters/                          Platform-specific loading guidance
 agents/                             Specialist outcome contracts
 core/roles/                         Durable discipline ownership
 core/workflows/                     Shared execution contracts
@@ -31,15 +33,15 @@ docs/                               User, architecture, and release guidance
 
 ### Skills
 
-`skills/` contains bounded Codex adapters and procedures. Role skills expose agent profiles. Workflow and provider skills add focused mechanics while referencing shared core contracts.
+`skills/` contains bounded procedures loaded by both Codex and Claude Code. Role skills expose agent profiles in Codex. Workflow and provider skills add focused mechanics while referencing shared core contracts.
 
 ### Deterministic Support
 
 `scripts/` and `tests/` enforce structure that should not depend on model interpretation: manifest shape, marketplace packaging, skill metadata, required files, and local documentation links.
 
-### Future Adapters
+### Adapter Support
 
-Codex is the reference implementation in `0.1.x`. Claude Code is supported by the root `.claude-plugin/plugin.json` in the current development line. Adapters must consume the same core and profile contracts instead of copying them into a second source of truth.
+Codex and Claude Code are supported in `v0.2.0`. Adapters must consume the same core and profile contracts instead of copying them into a second source of truth.
 
 ## Dependency Direction
 

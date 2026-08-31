@@ -41,6 +41,7 @@ Skills are bounded procedures or role adapters. Ask for the desired outcome; Cod
 | Skill | Use when |
 | --- | --- |
 | `saas-bootstrap-advisor` | Choosing a minimal SaaS project preset and integration profile from product and operational requirements. |
+| `hybrid-mobile-delivery` | Keeping one mobile-first web UI aligned across browser, PWA, iOS, and Android through Capacitor. |
 | `foundation-scaffold-guardian` | Protecting a reusable SaaS foundation from product-specific drift or unsafe generator and workspace changes. |
 
 ## Selection Rules
@@ -54,3 +55,13 @@ Skills are bounded procedures or role adapters. Ask for the desired outcome; Cod
 ## Planned Skills
 
 Additional providers depend on repeated SaaS use cases and real-project validation, not provider popularity alone. Planned work is not part of the current compatibility promise.
+
+### Candidate Next Skills
+
+| Candidate skill | Intended outcome | Add when |
+| --- | --- | --- |
+| GitHub CI/CD delivery | Configure preview, test, migration, and production approval gates in GitHub Actions. | Multiple projects repeat the same release workflow and need a maintained, provider-neutral baseline. |
+| End-to-end browser quality | Define and run Playwright coverage for critical user journeys, including preview evidence. | Product teams repeatedly need browser-level regression protection beyond focused unit and integration checks. |
+| SaaS security review | Review TypeScript, Next.js, and Supabase applications for authentication, authorization, RLS, secrets, abuse paths, and secure defaults. | Repeated reviews demonstrate a stable, actionable baseline that can be maintained without generic checklists. |
+
+These are roadmap candidates, not installed skills or delivery guarantees. Each requires a bounded contract, deterministic validation where practical, and real-project evidence before inclusion.

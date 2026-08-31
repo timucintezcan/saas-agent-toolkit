@@ -25,6 +25,8 @@ Determine:
 - Add a separate API when domain boundaries, independent scaling, clients, or runtime constraints justify it.
 - Add a worker and queue only for asynchronous, retryable, or long-running jobs.
 - Treat mobile as optional, not a default consequence of responsive web.
+- Recommend `hybrid-saas` when one mobile-first web UI should also ship in iOS and Android stores without a second native UI codebase.
+- Recommend `multi-client-saas` only when device-specific UX or platform capability justifies a separate Expo application.
 - Recommend only provider combinations documented as supported by the target foundation.
 - Separate required launch capabilities from later options.
 

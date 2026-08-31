@@ -1,0 +1,4 @@
+interface:
+  display_name: "Hybrid Mobile Delivery"
+  short_description: "Keep one web UI aligned across PWA, iOS, and Android."
+  default_prompt: "Prepare this mobile-first web product for PWA and Capacitor-based iOS and Android delivery without creating a second UI codebase."

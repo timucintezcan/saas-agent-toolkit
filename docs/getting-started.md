@@ -1,19 +1,20 @@
 # Getting Started
 
-## Prerequisites
+## Choose a Platform
 
-- Codex with `codex plugin` support
 - Git access to this public repository
 - A target SaaS repository for evaluation or implementation
 
+Use Codex or Claude Code as the primary agent for a task. Do not run both as concurrent writers in the same working tree.
+
 The target repository does not need to use SaaS Foundation. The toolkit discovers the repository before selecting frameworks, providers, commands, or paths.
 
-## Install a Tagged Release
+## Install into Codex
 
 Pin installation to a release tag for reproducible behavior:
 
 ```bash
-codex plugin marketplace add timucintezcan/saas-agent-toolkit --ref v0.1.1
+codex plugin marketplace add timucintezcan/saas-agent-toolkit --ref v0.2.0
 codex plugin add saas-agent-toolkit@saas-agent-toolkit
 ```
 
@@ -25,13 +26,24 @@ Start a new Codex task after installation. Plugin skills are loaded when a task 
 codex plugin list
 ```
 
-Expected state for `v0.1.1`:
+Expected state for `v0.2.0`:
 
 - marketplace: `saas-agent-toolkit`;
 - plugin: `saas-agent-toolkit@saas-agent-toolkit`;
 - status: installed and enabled;
-- version: `0.1.1`;
-- contents: 8 specialist profiles and 17 skills.
+- version: `0.2.0`;
+- contents: 8 specialist profiles and 22 skills.
+
+## Install into Claude Code
+
+Claude Code loads the repository as a local plugin directory. Clone a tagged release to a trusted local location:
+
+```bash
+git clone --branch v0.2.0 --depth 1 https://github.com/timucintezcan/saas-agent-toolkit.git ~/Developer/saas-agent-toolkit
+claude --plugin-dir ~/Developer/saas-agent-toolkit
+```
+
+Claude Code exposes skills such as `/saas-agent-toolkit:stripe-billing-integration` and subagents such as `@saas-agent-toolkit:architecture`. Run `claude plugin validate ~/Developer/saas-agent-toolkit` after local changes.
 
 ## Make a First Request
 
@@ -51,7 +63,7 @@ Other useful starting requests:
 
 See [Usage Patterns](usage-patterns.md) for complete workflows.
 
-## Install from a Local Clone
+## Install from a Local Clone for Toolkit Development
 
 For toolkit development:
 

@@ -8,11 +8,13 @@
 - **Adapter:** Packaging that makes profiles and skills usable in a specific coding agent.
 - **Tool:** A deterministic execution primitive such as a CLI, API, script, browser, or MCP server.
 
-## Current Runtime Model
+## Runtime Model
 
-Codex is the reference adapter. Specialist profiles are exposed as Codex role skills. Activating a role skill makes the current Codex agent adopt that outcome contract and select narrower workflow or provider skills as needed.
+Codex exposes specialist profiles through role skills. Activating a role skill makes the current Codex agent adopt that outcome contract and select narrower workflow or provider skills as needed.
 
-This is coordinated role execution, not a claim that every profile runs as an independent parallel process. True parallel multi-agent execution requires a supporting runtime, isolated work ownership, conflict handling, and integrated verification. Those capabilities are outside the `0.1.x` contract.
+Claude Code loads the same `SKILL.md` procedures as namespaced skills and the specialist profiles in `agents/` as namespaced subagents. The profile body remains the shared outcome contract; Claude-specific frontmatter only provides the metadata required for native loading.
+
+This is coordinated role execution, not a claim that every profile runs as an independent parallel process. True parallel multi-agent execution requires a supporting runtime, isolated work ownership, conflict handling, and integrated verification.
 
 ## Source of Truth
 
@@ -21,7 +23,7 @@ core roles, workflows, and policies
                 ↓
 vendor-neutral agent profiles
                 ↓
-Codex role skills
+Codex role skills and Claude Code subagents
                 ↓
 focused workflow and provider skills
                 ↓
