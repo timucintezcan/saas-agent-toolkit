@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cloudflare Domain Operations"
+  short_description: "Operate SaaS domains and edge controls safely."
+  default_prompt: "Prepare and verify a safe Cloudflare domain or edge configuration change, stopping at the production approval gate."

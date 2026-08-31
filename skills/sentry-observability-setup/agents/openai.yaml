@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sentry Observability Setup"
+  short_description: "Integrate actionable SaaS error and performance signals."
+  default_prompt: "Prepare and verify a privacy-conscious Sentry integration for this SaaS repository."

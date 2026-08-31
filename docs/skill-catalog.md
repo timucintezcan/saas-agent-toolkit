@@ -23,6 +23,9 @@ Skills are bounded procedures or role adapters. Ask for the desired outcome; Cod
 | `vercel-deployment` | Preparing or operating preview-first Vercel web deployment, domains, environment scope, smoke tests, or rollback. |
 | `railway-deployment` | Preparing or operating Railway APIs, workers, scheduled jobs, services, environments, domains, or releases. |
 | `openai-integration` | Designing or changing an OpenAI feature with server-side secrets, structured output, evaluations, retries, cost controls, and fallback. |
+| `cloudflare-domain-operations` | Onboarding or materially changing Cloudflare zones, DNS, proxy, TLS, redirects, caching, or basic edge security for SaaS domains. |
+| `sentry-observability-setup` | Integrating or changing Sentry errors, releases, source maps, tracing, alerts, privacy controls, or sampling. |
+| `resend-email-integration` | Integrating or changing Resend transactional email, sending domains, templates, retries, webhooks, or delivery controls. |
 
 ## Environment and Release Skills
 
@@ -49,4 +52,4 @@ Skills are bounded procedures or role adapters. Ask for the desired outcome; Cod
 
 ## Planned Skills
 
-Cloudflare, Stripe, Resend, and Sentry are planned after the initial provider contracts receive additional real-project evaluation. Planned work is not part of the current compatibility promise.
+Stripe is the next planned provider skill. Additional providers depend on repeated SaaS use cases and real-project validation, not provider popularity alone. Planned work is not part of the current compatibility promise.

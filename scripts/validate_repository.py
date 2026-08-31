@@ -10,6 +10,7 @@ from pathlib import Path
 
 FRONTMATTER_BOUNDARY = "---"
 LOCAL_LINK_PATTERN = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
+SKILL_CATALOG_PATTERN = re.compile(r"^\| `([^`]+)` \|", re.MULTILINE)
 
 
 def parse_frontmatter(path: Path) -> dict[str, str]:
@@ -138,6 +139,34 @@ def validate_skills(root: Path, errors: list[str]) -> None:
                 errors.append(f"{skill_directory.name}: openai.yaml missing {required_key}")
 
 
+def validate_skill_catalog(root: Path, errors: list[str]) -> None:
+    skills_root = root / "skills"
+    catalog_path = root / "docs" / "skill-catalog.md"
+    if not skills_root.is_dir() or not catalog_path.is_file():
+        if not catalog_path.is_file():
+            errors.append("Missing docs/skill-catalog.md")
+        return
+
+    installed = {path.name for path in skills_root.iterdir() if path.is_dir()}
+    documented_list = SKILL_CATALOG_PATTERN.findall(
+        catalog_path.read_text(encoding="utf-8")
+    )
+    documented = set(documented_list)
+
+    duplicates = sorted(
+        name for name in documented if documented_list.count(name) > 1
+    )
+    missing = sorted(installed - documented)
+    unknown = sorted(documented - installed)
+
+    if duplicates:
+        errors.append(f"Skill catalog contains duplicates: {', '.join(duplicates)}")
+    if missing:
+        errors.append(f"Skill catalog is missing: {', '.join(missing)}")
+    if unknown:
+        errors.append(f"Skill catalog contains unknown skills: {', '.join(unknown)}")
+
+
 def validate_markdown_links(root: Path, errors: list[str]) -> None:
     ignored_parts = {".git", "node_modules"}
     for markdown_file in sorted(root.rglob("*.md")):
@@ -159,6 +188,7 @@ def validate_repository(root: Path) -> list[str]:
     validate_plugin(root, errors)
     validate_marketplace(root, errors)
     validate_skills(root, errors)
+    validate_skill_catalog(root, errors)
     validate_markdown_links(root, errors)
     return errors
 

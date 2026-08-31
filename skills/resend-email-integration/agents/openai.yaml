@@ -1,0 +1,4 @@
+interface:
+  display_name: "Resend Email Integration"
+  short_description: "Integrate reliable transactional email with Resend."
+  default_prompt: "Prepare and verify a reliable Resend transactional email integration, stopping before production sending."

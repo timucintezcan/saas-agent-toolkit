@@ -5,7 +5,11 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from scripts.validate_repository import parse_frontmatter, validate_repository
+from scripts.validate_repository import (
+    parse_frontmatter,
+    validate_repository,
+    validate_skill_catalog,
+)
 
 
 class RepositoryValidatorTest(unittest.TestCase):
@@ -89,6 +93,27 @@ class RepositoryValidatorTest(unittest.TestCase):
                 "Marketplace plugin source must point to the repository root",
                 validate_repository(copy_root),
             )
+
+    def test_rejects_skill_catalog_drift(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "skills" / "documented-skill").mkdir(parents=True)
+            (root / "skills" / "missing-skill").mkdir(parents=True)
+            catalog_path = root / "docs" / "skill-catalog.md"
+            catalog_path.parent.mkdir()
+            catalog_path.write_text(
+                "| Skill | Use when |\n"
+                "| --- | --- |\n"
+                "| `documented-skill` | Documented. |\n"
+                "| `unknown-skill` | Unknown. |\n",
+                encoding="utf-8",
+            )
+            errors: list[str] = []
+
+            validate_skill_catalog(root, errors)
+
+            self.assertIn("Skill catalog is missing: missing-skill", errors)
+            self.assertIn("Skill catalog contains unknown skills: unknown-skill", errors)
 
 
 if __name__ == "__main__":

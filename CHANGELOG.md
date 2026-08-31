@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added
+
+- Cloudflare domain and edge operations skill with DNS, TLS, proxy, redirect, cache, and rollback controls.
+- Sentry observability setup skill with release, source-map, privacy, sampling, alert, and controlled-event verification.
+- Resend transactional email integration skill with domain authentication, idempotency, webhook, retry, and delivery controls.
+- Deterministic validation that keeps the public skill catalog aligned with installed skill directories.
+
 ## [0.1.1] - 2026-08-31
 
 ### Added
