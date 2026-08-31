@@ -38,7 +38,7 @@ Install the toolkit once in the agent environment, then use it with any compatib
 Install the current stable release:
 
 ```bash
-codex plugin marketplace add timucintezcan/saas-agent-toolkit --ref v0.2.0
+codex plugin marketplace add timucintezcan/saas-agent-toolkit --ref v0.3.0
 codex plugin add saas-agent-toolkit@saas-agent-toolkit
 ```
 
@@ -53,7 +53,7 @@ codex plugin list
 Clone the tagged release to a trusted local location, then load it as a plugin directory for the session:
 
 ```bash
-git clone --branch v0.2.0 --depth 1 https://github.com/timucintezcan/saas-agent-toolkit.git ~/Developer/saas-agent-toolkit
+git clone --branch v0.3.0 --depth 1 https://github.com/timucintezcan/saas-agent-toolkit.git ~/Developer/saas-agent-toolkit
 claude --plugin-dir ~/Developer/saas-agent-toolkit
 ```
 
@@ -164,7 +164,7 @@ Read [Architecture](docs/architecture.md) for dependency direction and extension
 
 ## Project Status
 
-`v0.2.0` is the current stable release. It supports Codex skills plus Claude Code skills and specialist subagents, and adds Cloudflare, Sentry, Resend, and Stripe provider skills with shared UI-assisted provider execution. See `docs/adapters.md` for platform boundaries.
+`v0.3.0` is the current stable release. It supports Codex skills, Claude Code skills and specialist subagents, and a hybrid mobile-delivery workflow for one mobile-first web UI across browser, PWA, iOS, and Android. It also includes Cloudflare, Sentry, Resend, Stripe, and shared UI-assisted provider execution. See `docs/adapters.md` for platform boundaries.
 
 ## Validation
 

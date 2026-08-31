@@ -41,7 +41,7 @@ docs/                               User, architecture, and release guidance
 
 ### Adapter Support
 
-Codex and Claude Code are supported in `v0.2.0`. Adapters must consume the same core and profile contracts instead of copying them into a second source of truth.
+Codex and Claude Code are supported in `v0.3.0`. Adapters must consume the same core and profile contracts instead of copying them into a second source of truth.
 
 ## Dependency Direction
 

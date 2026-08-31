@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-08-31
+
+### Added
+
+- Hybrid mobile delivery skill for keeping one mobile-first web UI aligned across browser, PWA, iOS, and Android through Capacitor.
+- Hybrid SaaS guidance in the Bootstrap Advisor, including the distinction between Capacitor packaging and a separate Expo application.
+- Candidate roadmap entries for GitHub CI/CD delivery, Playwright end-to-end browser quality, and SaaS security review workflows.
+
+### Changed
+
+- Updated Codex and Claude Code installation guidance, plugin manifests, and release metadata for version `0.3.0`.
+- Clarified the agent model, architecture, onboarding, and skill catalog for the current twenty-two-skill toolkit.
+
 ## [0.2.0] - 2026-08-31
 
 ### Added
@@ -43,7 +56,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Repository, skill, and plugin validation with GitHub Actions.
 - MIT license, contribution guidance, and security policy.
 
-[Unreleased]: https://github.com/timucintezcan/saas-agent-toolkit/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/timucintezcan/saas-agent-toolkit/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/timucintezcan/saas-agent-toolkit/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/timucintezcan/saas-agent-toolkit/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/timucintezcan/saas-agent-toolkit/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/timucintezcan/saas-agent-toolkit/releases/tag/v0.1.0

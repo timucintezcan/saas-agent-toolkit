@@ -14,7 +14,7 @@ The target repository does not need to use SaaS Foundation. The toolkit discover
 Pin installation to a release tag for reproducible behavior:
 
 ```bash
-codex plugin marketplace add timucintezcan/saas-agent-toolkit --ref v0.2.0
+codex plugin marketplace add timucintezcan/saas-agent-toolkit --ref v0.3.0
 codex plugin add saas-agent-toolkit@saas-agent-toolkit
 ```
 
@@ -26,12 +26,12 @@ Start a new Codex task after installation. Plugin skills are loaded when a task 
 codex plugin list
 ```
 
-Expected state for `v0.2.0`:
+Expected state for `v0.3.0`:
 
 - marketplace: `saas-agent-toolkit`;
 - plugin: `saas-agent-toolkit@saas-agent-toolkit`;
 - status: installed and enabled;
-- version: `0.2.0`;
+- version: `0.3.0`;
 - contents: 8 specialist profiles and 22 skills.
 
 ## Install into Claude Code
@@ -39,7 +39,7 @@ Expected state for `v0.2.0`:
 Claude Code loads the repository as a local plugin directory. Clone a tagged release to a trusted local location:
 
 ```bash
-git clone --branch v0.2.0 --depth 1 https://github.com/timucintezcan/saas-agent-toolkit.git ~/Developer/saas-agent-toolkit
+git clone --branch v0.3.0 --depth 1 https://github.com/timucintezcan/saas-agent-toolkit.git ~/Developer/saas-agent-toolkit
 claude --plugin-dir ~/Developer/saas-agent-toolkit
 ```
 

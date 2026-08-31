@@ -59,3 +59,12 @@ Record the following in the release notes:
 - Claude Code CLI validates the plugin without warnings.
 - Foundation generator contracts, provider skills, shared UI-assisted execution, and native Claude Code support remain optional for generated applications.
 - Known limitation: the adapter ships shared skills and specialist subagents only; provider-specific MCP servers, hooks, and Claude-only automation are deliberately not bundled.
+
+## Current `0.3.0` Evidence
+
+- The repository validator passes with twenty-two skills and eight Claude-compatible agent profiles.
+- Python unit tests pass.
+- The Codex and Claude plugin manifests carry matching `0.3.0` versions.
+- The hybrid mobile-delivery workflow keeps one mobile-first web UI as the product surface and isolates device capabilities behind Capacitor adapters.
+- The SaaS Bootstrap Advisor distinguishes the managed-backend web, hybrid, custom API, worker, and separate native application paths.
+- Known limitation: native platform project creation, code signing, store accounts, permissions, and store submission remain explicit human-owned steps.
