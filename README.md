@@ -34,7 +34,7 @@ SaaS Agent Toolkit provides those reusable contracts:
 Install the latest tagged release into Codex:
 
 ```bash
-codex plugin marketplace add timucintezcan/saas-agent-toolkit --ref v0.1.0
+codex plugin marketplace add timucintezcan/saas-agent-toolkit --ref v0.1.1
 codex plugin add saas-agent-toolkit@saas-agent-toolkit
 ```
 

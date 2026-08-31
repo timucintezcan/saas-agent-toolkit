@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-08-31
+
 ### Added
 
 - Local Codex installation and discovery verification against a real SaaS repository.
@@ -28,5 +30,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Repository, skill, and plugin validation with GitHub Actions.
 - MIT license, contribution guidance, and security policy.
 
-[Unreleased]: https://github.com/timucintezcan/saas-agent-toolkit/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/timucintezcan/saas-agent-toolkit/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/timucintezcan/saas-agent-toolkit/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/timucintezcan/saas-agent-toolkit/releases/tag/v0.1.0

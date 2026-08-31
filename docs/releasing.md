@@ -44,3 +44,10 @@ Record the following in the release notes:
 - The local plugin installs as enabled with eight agent profiles and seventeen skills.
 - Read-only evaluation against KitapBuurt confirmed environment, Supabase, Vercel, OpenAI, and release-readiness behavior without changing the target repository.
 - Claude Code support is intentionally deferred until the Codex workflows stabilize.
+
+## Current `0.1.1` Evidence
+
+- The public documentation is reorganized around onboarding, skill discovery, usage patterns, architecture, contribution, and security.
+- The skill catalog contains one entry for each of the seventeen installed skill directories.
+- Repository, unit, and canonical plugin validation pass.
+- The release preserves the `0.1.x` agent, skill, approval, and provider contracts.

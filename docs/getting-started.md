@@ -13,7 +13,7 @@ The target repository does not need to use SaaS Foundation. The toolkit discover
 Pin installation to a release tag for reproducible behavior:
 
 ```bash
-codex plugin marketplace add timucintezcan/saas-agent-toolkit --ref v0.1.0
+codex plugin marketplace add timucintezcan/saas-agent-toolkit --ref v0.1.1
 codex plugin add saas-agent-toolkit@saas-agent-toolkit
 ```
 
@@ -25,12 +25,12 @@ Start a new Codex task after installation. Plugin skills are loaded when a task 
 codex plugin list
 ```
 
-Expected state for `v0.1.0`:
+Expected state for `v0.1.1`:
 
 - marketplace: `saas-agent-toolkit`;
 - plugin: `saas-agent-toolkit@saas-agent-toolkit`;
 - status: installed and enabled;
-- version: `0.1.0`;
+- version: `0.1.1`;
 - contents: 8 specialist profiles and 17 skills.
 
 ## Make a First Request
