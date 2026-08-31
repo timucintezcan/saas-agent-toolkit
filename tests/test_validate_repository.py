@@ -7,6 +7,7 @@ from pathlib import Path
 
 from scripts.validate_repository import (
     parse_frontmatter,
+    validate_claude_agents,
     validate_claude_plugin,
     validate_provider_contracts,
     validate_repository,
@@ -53,6 +54,18 @@ class RepositoryValidatorTest(unittest.TestCase):
         errors: list[str] = []
         validate_claude_plugin(Path(tempfile.mkdtemp()), errors)
         self.assertIn("Missing .claude-plugin/plugin.json", errors)
+
+    def test_rejects_claude_agent_without_description(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            agent_path = root / "agents" / "incomplete.md"
+            agent_path.parent.mkdir()
+            agent_path.write_text("---\nname: incomplete\n---\n# Incomplete\n", encoding="utf-8")
+            errors: list[str] = []
+
+            validate_claude_agents(root, errors)
+
+            self.assertIn("incomplete.md: Claude agent description is required", errors)
 
     def test_rejects_unterminated_frontmatter(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

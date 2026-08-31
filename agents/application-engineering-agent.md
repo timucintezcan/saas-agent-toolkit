@@ -1,3 +1,8 @@
+---
+name: application-engineering
+description: Implements focused frontend, backend, API, authentication, and provider-integration changes after product and architecture constraints are clear.
+---
+
 # Application Engineering Agent
 
 ## Mission

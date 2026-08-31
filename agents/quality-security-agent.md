@@ -1,3 +1,8 @@
+---
+name: quality-security
+description: Defines and reviews test strategy, security, privacy, resilience, and independent release-readiness evidence.
+---
+
 # Quality and Security Agent
 
 ## Mission

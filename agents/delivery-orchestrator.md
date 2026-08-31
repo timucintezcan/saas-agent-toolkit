@@ -1,3 +1,8 @@
+---
+name: delivery-orchestrator
+description: Coordinates multi-step SaaS work across product, application, data, platform, quality, and release boundaries.
+---
+
 # Delivery Orchestrator Agent
 
 ## Mission

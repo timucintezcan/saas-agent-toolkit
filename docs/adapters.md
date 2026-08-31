@@ -16,7 +16,7 @@ Claude Code is supported through the root `.claude-plugin/plugin.json` and the s
 claude --plugin-dir /path/to/saas-agent-toolkit
 ```
 
-The adapter exposes namespaced skills such as `/saas-agent-toolkit:product-prd`. Claude Code uses each skill's `SKILL.md`; Codex-only `agents/openai.yaml` metadata is ignored by Claude Code.
+The adapter exposes namespaced skills such as `/saas-agent-toolkit:product-prd` and native subagents such as `@saas-agent-toolkit:product-prd`. Claude Code uses each skill's `SKILL.md`; Codex-only `agents/openai.yaml` metadata is ignored by Claude Code.
 
 ## Source-of-truth rules
 

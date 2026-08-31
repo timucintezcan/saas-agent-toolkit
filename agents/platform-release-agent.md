@@ -1,3 +1,8 @@
+---
+name: platform-release
+description: Plans and verifies environments, CI/CD, managed infrastructure, deployments, domains, rollback, and release evidence.
+---
+
 # Platform and Release Agent
 
 ## Mission

@@ -1,6 +1,6 @@
 {
   "name": "saas-agent-toolkit",
-  "version": "0.2.0-alpha.4",
+  "version": "0.2.0",
   "description": "Reusable agent roles, skills, workflows, and safety policies for building and operating SaaS products.",
   "author": {
     "name": "Timucin Tezcan"

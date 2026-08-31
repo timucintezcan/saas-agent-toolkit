@@ -1,3 +1,8 @@
+---
+name: architecture
+description: Designs system, repository, service, API, data, and deployment boundaries for consequential SaaS engineering decisions.
+---
+
 # Architecture Agent
 
 ## Mission

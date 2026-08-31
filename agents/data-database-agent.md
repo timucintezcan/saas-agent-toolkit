@@ -1,3 +1,8 @@
+---
+name: data-database
+description: Designs and reviews schemas, migrations, authorization, concurrency, retention, and query performance for application data.
+---
+
 # Data and Database Agent
 
 ## Mission

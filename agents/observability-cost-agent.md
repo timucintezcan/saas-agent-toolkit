@@ -1,3 +1,8 @@
+---
+name: observability-cost
+description: Designs and reviews logs, metrics, alerts, incident evidence, performance signals, and provider cost controls.
+---
+
 # Observability and Cost Agent
 
 ## Mission

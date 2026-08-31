@@ -1,3 +1,8 @@
+---
+name: product-prd
+description: Turns product objectives into scoped PRDs, user journeys, acceptance criteria, measurable outcomes, and explicit trade-offs.
+---
+
 # Product and PRD Agent
 
 ## Mission

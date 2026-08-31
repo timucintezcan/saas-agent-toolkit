@@ -6,9 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-08-31
+
 ### Added
 
 - Initial Claude Code plugin-directory adapter with shared namespaced skills and adapter boundary documentation.
+- Native Claude Code metadata for all eight specialist agent profiles.
 - Cloudflare domain and edge operations skill with DNS, TLS, proxy, redirect, cache, and rollback controls.
 - Sentry observability setup skill with release, source-map, privacy, sampling, alert, and controlled-event verification.
 - Resend transactional email integration skill with domain authentication, idempotency, webhook, retry, and delivery controls.
@@ -40,6 +43,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Repository, skill, and plugin validation with GitHub Actions.
 - MIT license, contribution guidance, and security policy.
 
-[Unreleased]: https://github.com/timucintezcan/saas-agent-toolkit/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/timucintezcan/saas-agent-toolkit/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/timucintezcan/saas-agent-toolkit/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/timucintezcan/saas-agent-toolkit/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/timucintezcan/saas-agent-toolkit/releases/tag/v0.1.0

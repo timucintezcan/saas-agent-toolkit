@@ -72,6 +72,34 @@ def validate_claude_plugin(root: Path, errors: list[str]) -> None:
         errors.append("Claude plugin version is required")
 
 
+def validate_claude_agents(root: Path, errors: list[str]) -> None:
+    agents_root = root / "agents"
+    if not agents_root.is_dir():
+        errors.append("Missing agents directory")
+        return
+
+    agent_files = sorted(agents_root.glob("*.md"))
+    if not agent_files:
+        errors.append("No Claude-compatible agent profiles found")
+        return
+
+    for agent_file in agent_files:
+        try:
+            frontmatter = parse_frontmatter(agent_file)
+        except ValueError as error:
+            errors.append(str(error))
+            continue
+
+        name = frontmatter.get("name", "")
+        if not name:
+            errors.append(f"{agent_file.name}: Claude agent name is required")
+        elif ":" in name or name.startswith("-"):
+            errors.append(f"{agent_file.name}: Claude agent name is invalid")
+
+        if not frontmatter.get("description"):
+            errors.append(f"{agent_file.name}: Claude agent description is required")
+
+
 def validate_marketplace(root: Path, errors: list[str]) -> None:
     marketplace_path = root / ".agents" / "plugins" / "marketplace.json"
     if not marketplace_path.is_file():
@@ -230,6 +258,7 @@ def validate_repository(root: Path) -> list[str]:
     errors: list[str] = []
     validate_plugin(root, errors)
     validate_claude_plugin(root, errors)
+    validate_claude_agents(root, errors)
     validate_marketplace(root, errors)
     validate_skills(root, errors)
     validate_skill_catalog(root, errors)

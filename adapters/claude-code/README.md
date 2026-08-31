@@ -10,14 +10,14 @@ From a checkout of this repository, start Claude Code with the repository as a p
 claude --plugin-dir /path/to/saas-agent-toolkit
 ```
 
-Claude Code discovers the root `.claude-plugin/plugin.json` and the root `skills/` directory. Skills are namespaced as `/saas-agent-toolkit:<skill-name>`.
+Claude Code discovers the root `.claude-plugin/plugin.json`, `skills/` directory, and `agents/` directory. Skills are namespaced as `/saas-agent-toolkit:<skill-name>` and subagents as `@saas-agent-toolkit:<agent-name>`.
 
 Reload after editing with `/reload-plugins`.
 
 ## Operating contract
 
 - `core/` remains the vendor-neutral source of truth.
-- `agents/` remains the durable outcome and delegation model.
+- `agents/` remains the durable outcome and delegation model, and carries the minimal frontmatter Claude Code needs to load those profiles as plugin subagents.
 - `skills/` is loaded natively by Claude Code; it is not copied or rewritten.
 - Claude Code may use the same provider, approval, secret-management, and release contracts as Codex.
 - Human approval is still required immediately before production mutations.

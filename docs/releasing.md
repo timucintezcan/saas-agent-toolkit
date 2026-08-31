@@ -33,7 +33,7 @@ Record the following in the release notes:
 - plugin installation and discovery result;
 - real-project evaluation scope;
 - supported Codex version or environment;
-- known limitations and deferred adapters.
+- known limitations and deferred adapter capabilities.
 
 ## Current `0.1.0` Evidence
 
@@ -43,7 +43,6 @@ Record the following in the release notes:
 - The repository can be registered directly as a Codex marketplace without duplicating plugin files.
 - The local plugin installs as enabled with eight agent profiles and seventeen skills.
 - Read-only evaluation against KitapBuurt confirmed environment, Supabase, Vercel, OpenAI, and release-readiness behavior without changing the target repository.
-- Claude Code support is an initial plugin-directory adapter in the current development line; native Claude-specific extensions remain out of scope until a concrete need is documented.
 
 ## Current `0.1.1` Evidence
 
@@ -51,3 +50,12 @@ Record the following in the release notes:
 - The skill catalog contains one entry for each of the seventeen installed skill directories.
 - Repository, unit, and canonical plugin validation pass.
 - The release preserves the `0.1.x` agent, skill, approval, and provider contracts.
+
+## Current `0.2.0` Evidence
+
+- The repository validator passes with twenty-one skills and eight Claude-compatible agent profiles.
+- Python unit tests pass.
+- Codex plugin manifest and marketplace contracts validate through the repository validator.
+- Claude Code CLI validates the plugin without warnings.
+- Foundation generator contracts, provider skills, shared UI-assisted execution, and native Claude Code support remain optional for generated applications.
+- Known limitation: the adapter ships shared skills and specialist subagents only; provider-specific MCP servers, hooks, and Claude-only automation are deliberately not bundled.
