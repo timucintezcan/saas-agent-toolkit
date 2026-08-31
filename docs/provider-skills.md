@@ -30,6 +30,19 @@ Every provider workflow follows the same control sequence:
 8. **Verify:** collect immutable identifiers, health checks, smoke tests, policy checks, or usage evidence.
 9. **Handoff:** record rollback, remaining risks, and operational ownership.
 
+## Execution Interfaces
+
+Provider skills may use an official API, CLI, connector, deterministic script, authenticated provider UI, or manual user handoff.
+
+- Prefer reproducible APIs, CLIs, and connectors when they provide the required capability safely.
+- Use the provider UI when the user requests it, the action is UI-only, or visual inspection materially improves verification.
+- Let the user complete login, MFA, CAPTCHA, legal consent, billing confirmation, and any step that would expose credentials or recovery material.
+- Treat UI navigation and form preparation separately from the final mutation.
+- Request approval immediately before approval-gated Save, Deploy, Create, Delete, Rotate, Revoke, Transfer, Purchase, Enable, or Send actions.
+- Resume after a manual handoff only when the user confirms that the human-only step is complete.
+
+The selected interface never weakens secret, approval, environment, or verification contracts. See the shared [Provider Integration Workflow](../core/workflows/provider-integration.md).
+
 ## Documentation Policy
 
 Provider interfaces, pricing, limits, CLI commands, and dashboard navigation change over time. Provider skills store durable decisions and invariants rather than copied provider manuals.

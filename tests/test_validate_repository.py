@@ -7,6 +7,7 @@ from pathlib import Path
 
 from scripts.validate_repository import (
     parse_frontmatter,
+    validate_provider_contracts,
     validate_repository,
     validate_skill_catalog,
 )
@@ -114,6 +115,29 @@ class RepositoryValidatorTest(unittest.TestCase):
 
             self.assertIn("Skill catalog is missing: missing-skill", errors)
             self.assertIn("Skill catalog contains unknown skills: unknown-skill", errors)
+
+    def test_rejects_provider_without_shared_workflow(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            skill_path = root / "skills" / "example-provider" / "SKILL.md"
+            skill_path.parent.mkdir(parents=True)
+            skill_path.write_text("# Example Provider\n", encoding="utf-8")
+            catalog_path = root / "docs" / "provider-skills.md"
+            catalog_path.parent.mkdir()
+            catalog_path.write_text(
+                "| Skill | Coverage |\n"
+                "| --- | --- |\n"
+                "| `example-provider` | Example. |\n",
+                encoding="utf-8",
+            )
+            errors: list[str] = []
+
+            validate_provider_contracts(root, errors)
+
+            self.assertIn(
+                "example-provider: provider skill must reference provider-integration.md",
+                errors,
+            )
 
 
 if __name__ == "__main__":

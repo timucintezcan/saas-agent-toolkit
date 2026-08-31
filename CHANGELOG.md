@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Sentry observability setup skill with release, source-map, privacy, sampling, alert, and controlled-event verification.
 - Resend transactional email integration skill with domain authentication, idempotency, webhook, retry, and delivery controls.
 - Deterministic validation that keeps the public skill catalog aligned with installed skill directories.
+- Shared UI-assisted provider execution mode with authenticated-session, credential-handoff, prompt-injection, final-action approval, and evidence rules.
 
 ## [0.1.1] - 2026-08-31
 

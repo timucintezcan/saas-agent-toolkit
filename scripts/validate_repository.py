@@ -167,6 +167,31 @@ def validate_skill_catalog(root: Path, errors: list[str]) -> None:
         errors.append(f"Skill catalog contains unknown skills: {', '.join(unknown)}")
 
 
+def validate_provider_contracts(root: Path, errors: list[str]) -> None:
+    provider_catalog_path = root / "docs" / "provider-skills.md"
+    if not provider_catalog_path.is_file():
+        errors.append("Missing docs/provider-skills.md")
+        return
+
+    provider_names = SKILL_CATALOG_PATTERN.findall(
+        provider_catalog_path.read_text(encoding="utf-8")
+    )
+    if not provider_names:
+        errors.append("Provider catalog must list at least one provider skill")
+        return
+
+    required_reference = "../../core/workflows/provider-integration.md"
+    for provider_name in provider_names:
+        skill_path = root / "skills" / provider_name / "SKILL.md"
+        if not skill_path.is_file():
+            errors.append(f"Provider catalog references missing skill: {provider_name}")
+            continue
+        if required_reference not in skill_path.read_text(encoding="utf-8"):
+            errors.append(
+                f"{provider_name}: provider skill must reference provider-integration.md"
+            )
+
+
 def validate_markdown_links(root: Path, errors: list[str]) -> None:
     ignored_parts = {".git", "node_modules"}
     for markdown_file in sorted(root.rglob("*.md")):
@@ -189,6 +214,7 @@ def validate_repository(root: Path) -> list[str]:
     validate_marketplace(root, errors)
     validate_skills(root, errors)
     validate_skill_catalog(root, errors)
+    validate_provider_contracts(root, errors)
     validate_markdown_links(root, errors)
     return errors
 

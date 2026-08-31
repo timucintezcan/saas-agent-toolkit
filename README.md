@@ -138,7 +138,7 @@ Read [Architecture](docs/architecture.md) for dependency direction and extension
 
 ## Project Status
 
-Codex is the reference adapter. Current `main` is the `0.2.0-alpha.1` development line with Cloudflare, Sentry, and Resend provider skills. Stripe is the next planned provider skill. Claude Code support remains deferred until the shared contracts and real-project evaluations are stable.
+Codex is the reference adapter. Current `main` is the `0.2.0-alpha.2` development line with Cloudflare, Sentry, and Resend provider skills plus shared UI-assisted provider execution. Stripe is the next planned provider skill. Claude Code support remains deferred until the shared contracts and real-project evaluations are stable.
 
 ## Validation
 
