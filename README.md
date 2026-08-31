@@ -85,10 +85,10 @@ Read [Agent Model](docs/agent-model.md) for the execution and routing contract.
 
 ## Skill Coverage
 
-The latest tagged release, `v0.1.1`, contains 17 skills. Current `main` adds three provider skills and contains 20 skills across four groups:
+The latest tagged release, `v0.1.1`, contains 17 skills. Current `main` contains 21 skills across four groups:
 
 - **Role adapters:** delivery, product, architecture, application, data, platform, quality, and observability.
-- **Provider integrations:** Supabase, Vercel, Railway, OpenAI, Cloudflare, Sentry, and Resend.
+- **Provider integrations:** Supabase, Vercel, Railway, OpenAI, Cloudflare, Sentry, Resend, and Stripe.
 - **Environment and release:** environment contracts, deployment profiles, and release readiness.
 - **Foundation workflows:** SaaS bootstrap decisions and scaffold protection.
 
@@ -138,7 +138,7 @@ Read [Architecture](docs/architecture.md) for dependency direction and extension
 
 ## Project Status
 
-Codex is the reference adapter. Current `main` is the `0.2.0-alpha.2` development line with Cloudflare, Sentry, and Resend provider skills plus shared UI-assisted provider execution. Stripe is the next planned provider skill. Claude Code support remains deferred until the shared contracts and real-project evaluations are stable.
+Codex is the reference adapter. Current `main` is the `0.2.0-alpha.4` development line with Cloudflare, Sentry, Resend, and Stripe provider skills, shared UI-assisted provider execution, and an initial Claude Code plugin adapter. See `docs/adapters.md` for platform boundaries.
 
 ## Validation
 

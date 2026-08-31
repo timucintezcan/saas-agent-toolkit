@@ -43,7 +43,7 @@ Record the following in the release notes:
 - The repository can be registered directly as a Codex marketplace without duplicating plugin files.
 - The local plugin installs as enabled with eight agent profiles and seventeen skills.
 - Read-only evaluation against KitapBuurt confirmed environment, Supabase, Vercel, OpenAI, and release-readiness behavior without changing the target repository.
-- Claude Code support is intentionally deferred until the Codex workflows stabilize.
+- Claude Code support is an initial plugin-directory adapter in the current development line; native Claude-specific extensions remain out of scope until a concrete need is documented.
 
 ## Current `0.1.1` Evidence
 

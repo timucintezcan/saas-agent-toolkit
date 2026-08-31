@@ -7,6 +7,7 @@ from pathlib import Path
 
 from scripts.validate_repository import (
     parse_frontmatter,
+    validate_claude_plugin,
     validate_provider_contracts,
     validate_repository,
     validate_skill_catalog,
@@ -47,6 +48,11 @@ class RepositoryValidatorTest(unittest.TestCase):
                 "expected-name: frontmatter name must match directory",
                 validate_repository(root),
             )
+
+    def test_rejects_missing_claude_plugin_manifest(self) -> None:
+        errors: list[str] = []
+        validate_claude_plugin(Path(tempfile.mkdtemp()), errors)
+        self.assertIn("Missing .claude-plugin/plugin.json", errors)
 
     def test_rejects_unterminated_frontmatter(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

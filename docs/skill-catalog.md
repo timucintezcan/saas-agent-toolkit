@@ -26,6 +26,7 @@ Skills are bounded procedures or role adapters. Ask for the desired outcome; Cod
 | `cloudflare-domain-operations` | Onboarding or materially changing Cloudflare zones, DNS, proxy, TLS, redirects, caching, or basic edge security for SaaS domains. |
 | `sentry-observability-setup` | Integrating or changing Sentry errors, releases, source maps, tracing, alerts, privacy controls, or sampling. |
 | `resend-email-integration` | Integrating or changing Resend transactional email, sending domains, templates, retries, webhooks, or delivery controls. |
+| `stripe-billing-integration` | Integrating or changing Stripe payments, subscriptions, webhooks, customer portal, entitlements, or reconciliation for SaaS billing. |
 
 ## Environment and Release Skills
 
@@ -52,4 +53,4 @@ Skills are bounded procedures or role adapters. Ask for the desired outcome; Cod
 
 ## Planned Skills
 
-Stripe is the next planned provider skill. Additional providers depend on repeated SaaS use cases and real-project validation, not provider popularity alone. Planned work is not part of the current compatibility promise.
+Additional providers depend on repeated SaaS use cases and real-project validation, not provider popularity alone. Planned work is not part of the current compatibility promise.

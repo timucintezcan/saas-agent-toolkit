@@ -13,6 +13,7 @@ Provider skills implement bounded integration and operation workflows. They do n
 | `cloudflare-domain-operations` | Zones, DNS, proxy, TLS, redirects, caching, basic edge security, and domain verification |
 | `sentry-observability-setup` | Error capture, releases, source maps, tracing, sampling, privacy, alerts, and controlled-event verification |
 | `resend-email-integration` | Transactional email, sending domains, templates, idempotency, retries, webhooks, and delivery verification |
+| `stripe-billing-integration` | Payments, subscriptions, verified webhooks, idempotency, entitlements, customer portal, and reconciliation |
 
 Environment and deployment support is provided by `environment-contract-manager` and `deploy-profile-writer`. See the complete [Skill Catalog](skill-catalog.md).
 
@@ -77,4 +78,4 @@ A new provider skill must:
 - avoid requiring the provider for unrelated toolkit functionality;
 - pass skill, plugin, repository, and behavioral validation.
 
-Stripe is the next planned candidate. Further providers depend on repeated SaaS demand and real-project validation, not provider popularity alone.
+Further providers depend on repeated SaaS demand and real-project validation, not provider popularity alone.

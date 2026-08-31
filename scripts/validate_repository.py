@@ -54,6 +54,24 @@ def validate_plugin(root: Path, errors: list[str]) -> None:
         errors.append("Plugin skills path must be ./skills/")
 
 
+def validate_claude_plugin(root: Path, errors: list[str]) -> None:
+    manifest_path = root / ".claude-plugin" / "plugin.json"
+    if not manifest_path.is_file():
+        errors.append("Missing .claude-plugin/plugin.json")
+        return
+
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as error:
+        errors.append(f"Invalid Claude plugin JSON: {error}")
+        return
+
+    if manifest.get("name") != "saas-agent-toolkit":
+        errors.append("Claude plugin name must be saas-agent-toolkit")
+    if not manifest.get("version"):
+        errors.append("Claude plugin version is required")
+
+
 def validate_marketplace(root: Path, errors: list[str]) -> None:
     marketplace_path = root / ".agents" / "plugins" / "marketplace.json"
     if not marketplace_path.is_file():
@@ -211,6 +229,7 @@ def validate_markdown_links(root: Path, errors: list[str]) -> None:
 def validate_repository(root: Path) -> list[str]:
     errors: list[str] = []
     validate_plugin(root, errors)
+    validate_claude_plugin(root, errors)
     validate_marketplace(root, errors)
     validate_skills(root, errors)
     validate_skill_catalog(root, errors)

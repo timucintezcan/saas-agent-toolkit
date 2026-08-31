@@ -39,7 +39,7 @@ docs/                               User, architecture, and release guidance
 
 ### Future Adapters
 
-Codex is the reference implementation in `0.1.x`. Future adapters must consume the same core and profile contracts instead of copying them into a second source of truth.
+Codex is the reference implementation in `0.1.x`. Claude Code is supported by the root `.claude-plugin/plugin.json` in the current development line. Adapters must consume the same core and profile contracts instead of copying them into a second source of truth.
 
 ## Dependency Direction
 

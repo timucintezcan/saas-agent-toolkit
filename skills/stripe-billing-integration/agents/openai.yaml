@@ -1,0 +1,4 @@
+interface:
+  display_name: "Stripe Billing Integration"
+  short_description: "Integrate reliable SaaS billing and entitlements."
+  default_prompt: "Prepare and verify a test-mode-first Stripe billing integration, stopping before live billing mutations."
